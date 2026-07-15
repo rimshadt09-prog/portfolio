@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rimshad | Creative Portfolio</title>
+  <meta name="description" content="Minimalist creative portfolio of Rimshad - AI Content Creator & BCA Graduate. Inspired by modern high-end editorial designs.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Header Meta -->
+  <header class="meta-header">
+    <div class="meta-left">
+      <span>AVAILABLE FOR WORK</span>
+      <span class="meta-dot">•</span>
+      <span>AI CONTENT CREATOR & BCA</span>
+    </div>
+    <div class="meta-right">
+      <span>KERALA, INDIA</span>
+      <span class="meta-dot">•</span>
+      <span id="local-time">12:00:00 PM</span>
+    </div>
+  </header>
+
+  <!-- Hero Main Wrapper -->
+  <main class="hero-wrapper">
+    <div class="title-container">
+      <h1 class="giant-title">
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.0s;">R</span></span>
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.08s;">I</span></span>
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.16s;">M</span></span>
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.24s;">S</span></span>
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.32s;">H</span></span>
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.4s;">A</span></span>
+        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.48s;">D</span></span>
+      </h1>
+    </div>
+
+    <!-- Small Sub-links -->
+    <div class="sub-links">
+      <a href="https://github.com" target="_blank" class="editorial-link">GITHUB</a>
+      <span class="link-separator">/</span>
+      <a href="https://linkedin.com" target="_blank" class="editorial-link">LINKEDIN</a>
+      <span class="link-separator">/</span>
+      <a href="mailto:rimshad@example.com" class="editorial-link">EMAIL</a>
+    </div>
+
+    <!-- Centered Visual Container -->
+    <div class="photo-section">
+      <div class="photo-container" id="photo-frame">
+        <!-- Grayscale to color image -->
+        <img src="assets/rimshad_photo_black_bg.jpg" alt="Rimshad Photo" class="hero-image grayscale" id="hero-img">
+        
+        <!-- Toggle button for B&W vs Color inside the card -->
+        <div class="photo-controls">
+          <button class="control-btn active" id="btn-bw">B&W</button>
+          <button class="control-btn" id="btn-color">COLOR</button>
+        </div>
+
+        <!-- Magnetic floating circular badge -->
+        <a href="mailto:rimshad@example.com" class="talk-badge" id="magnetic-badge">
+          <div class="badge-content">
+            <span>TALK</span>
+            <span>TO ME</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS Script -->
+  <script src="script.js"></script>
+</body>
+</html>

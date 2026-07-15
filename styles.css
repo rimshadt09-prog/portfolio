@@ -1,0 +1,333 @@
+/* CSS Reset & Variable Definitions */
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --text-dim: #7f7f7f;
+  --text-muted: #404040;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-hover: rgba(255, 255, 255, 0.25);
+  
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --transition-editorial: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar for a premium look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+
+/* 1. Header Metadata Navigation */
+.meta-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.25rem 3.5rem 4rem 3.5rem; /* Extended bottom padding for smooth gradient fade */
+  z-index: 100;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none; /* Allows clicks to pass through the gradient area */
+}
+
+.meta-left, .meta-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: auto; /* Restores clickability on header content if needed */
+}
+
+.meta-dot {
+  color: var(--text-muted);
+}
+
+/* 2. Hero Core Wrapper */
+.hero-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 2rem 4rem 2rem; /* Increased top padding from 8rem to 10rem to prevent overlap */
+  width: 100%;
+}
+
+/* 3. Giant Center Typography */
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Bounding box mask to hide letters initially */
+}
+
+.giant-title {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 15vw, 16rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2.25rem;
+  /* Anti-aliasing scaling hack */
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.letter-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.letter-reveal {
+  display: inline-block;
+  transform: translateY(110%);
+  animation: slide-up-reveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes slide-up-reveal {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 4. Small Sub-links Section */
+.sub-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: 3.5rem;
+}
+
+.editorial-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.editorial-link:hover {
+  color: var(--text-color);
+}
+
+.link-separator {
+  color: var(--text-muted);
+}
+
+/* 5. Centered Photograph Layout */
+.photo-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-container {
+  position: relative;
+  width: 380px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #0d0d0d;
+  transition: var(--transition-editorial);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+}
+
+.photo-container:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-4px);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-editorial);
+}
+
+/* Interactive Color Toggle Controls */
+.photo-controls {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem;
+  border-radius: 100px;
+  z-index: 3;
+}
+
+.control-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 0.4rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.control-btn:hover {
+  color: var(--text-color);
+}
+
+.control-btn.active {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* B&W state control */
+.hero-image.grayscale {
+  filter: grayscale(100%);
+}
+
+.hero-image:not(.grayscale) {
+  filter: grayscale(0%);
+}
+
+/* Auto-hover color transitions when toggles are not strictly clicked */
+.photo-container:hover .hero-image.grayscale-hover {
+  filter: grayscale(0%);
+}
+
+/* 6. Magnetic Floating Circular Badge */
+.talk-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: -2.5rem;
+  width: 80px;
+  height: 80px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.talk-badge:hover {
+  transform: scale(1.15) rotate(15deg);
+  background-color: #f3f3f3;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* Responsive Scaling Breakpoints */
+
+@media (max-width: 1024px) {
+  .meta-header {
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .meta-header {
+    padding: 1.5rem 2rem 3rem 2rem; /* Preserves gradient fade depth on mobile */
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+  }
+  
+  .hero-wrapper {
+    padding-top: 9rem; /* Increased top padding on mobile to prevent overlap */
+  }
+  
+  .photo-container {
+    width: 290px;
+    height: 380px;
+  }
+  
+  .talk-badge {
+    right: -1.5rem;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .badge-content {
+    font-size: 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .meta-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding-bottom: 2.5rem; /* Ensures gradient extends past wrapped meta rows */
+  }
+  
+  .hero-wrapper {
+    padding-top: 11rem; /* Further increased top padding on extra-small mobile to accommodate wrapped headers */
+  }
+  
+  .giant-title {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sub-links {
+    gap: 1rem;
+    font-size: 0.7rem;
+    margin-bottom: 2.5rem;
+  }
+}
