@@ -30,50 +30,123 @@
     </div>
   </header>
 
-  <!-- Hero Main Wrapper -->
-  <main class="hero-wrapper">
-    <div class="title-container">
-      <h1 class="giant-title">
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.0s;">R</span></span>
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.08s;">I</span></span>
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.16s;">M</span></span>
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.24s;">S</span></span>
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.32s;">H</span></span>
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.4s;">A</span></span>
-        <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.48s;">D</span></span>
-      </h1>
-    </div>
+  <!-- Page Container -->
+  <main class="page-container">
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="title-container">
+        <h1 class="giant-title">
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.0s;">R</span></span>
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.4s;">I</span></span>
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 0.8s;">M</span></span>
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 1.2s;">S</span></span>
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 1.6s;">H</span></span>
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 2.0s;">A</span></span>
+          <span class="letter-wrapper"><span class="letter-reveal" style="animation-delay: 2.4s;">D</span></span>
+        </h1>
+      </div>
 
-    <!-- Small Sub-links -->
-    <div class="sub-links">
-      <a href="https://github.com" target="_blank" class="editorial-link">GITHUB</a>
-      <span class="link-separator">/</span>
-      <a href="https://linkedin.com" target="_blank" class="editorial-link">LINKEDIN</a>
-      <span class="link-separator">/</span>
-      <a href="mailto:rimshad@example.com" class="editorial-link">EMAIL</a>
-    </div>
+      <!-- Small Sub-links -->
+      <div class="sub-links">
+        <a href="https://github.com" target="_blank" class="editorial-link">GITHUB</a>
+        <span class="link-separator">/</span>
+        <a href="https://linkedin.com" target="_blank" class="editorial-link">LINKEDIN</a>
+        <span class="link-separator">/</span>
+        <a href="https://www.instagram.com/theaitom" target="_blank" class="editorial-link">INSTAGRAM</a>
+        <span class="link-separator">/</span>
+        <a href="mailto:rimshadt09@gmail.com" class="editorial-link">EMAIL</a>
+      </div>
 
-    <!-- Centered Visual Container -->
-    <div class="photo-section">
-      <div class="photo-container" id="photo-frame">
-        <!-- Grayscale to color image -->
-        <img src="assets/rimshad_photo_black_bg.jpg" alt="Rimshad Photo" class="hero-image grayscale" id="hero-img">
-        
-        <!-- Toggle button for B&W vs Color inside the card -->
-        <div class="photo-controls">
-          <button class="control-btn active" id="btn-bw">B&W</button>
-          <button class="control-btn" id="btn-color">COLOR</button>
+      <!-- Centered Visual Container -->
+      <div class="photo-section">
+        <div class="photo-container" id="photo-frame">
+          <!-- Grayscale to color image -->
+          <img src="assets/rimshad_photo_black_bg.jpg" alt="Rimshad Photo" class="hero-image grayscale" id="hero-img">
+          
+          <!-- Toggle button for B&W vs Color inside the card -->
+          <div class="photo-controls">
+            <button class="control-btn active" id="btn-bw">B&W</button>
+            <button class="control-btn" id="btn-color">COLOR</button>
+          </div>
+
+          <!-- Magnetic floating circular badge -->
+          <a href="mailto:rimshadt09@gmail.com" class="talk-badge" id="magnetic-badge">
+            <div class="badge-content">
+              <span>TALK</span>
+              <span>TO ME</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scrollable About Section -->
+    <section id="about" class="about-section scroll-reveal">
+      <div class="about-grid">
+        <!-- Biography Left Column -->
+        <div class="bio-column reveal-element reveal-left">
+          <h2 class="about-heading">ABOUT ME</h2>
+          <p class="bio-intro">
+            I'm Rimshad, an AI Content Creator and Bachelor of Computer Applications (BCA) graduate with a passion for combining creativity, technology, and marketing to create meaningful digital experiences.
+          </p>
+          
+          <p class="bio-text">
+            I completed my Higher Secondary Education in Computer Science at GVHSS Chettiyankinar, followed by a Bachelor of Computer Applications (BCA). My academic background has provided me with a strong foundation in computer science, digital technologies, and problem-solving.
+          </p>
+
+          <p class="bio-text">
+            My experience spans Business Administration, Stock Market Analysis, Social Media Marketing, Content Marketing, and AI Video Creation & Marketing. I enjoy using modern AI technologies to create high-quality visual content and marketing solutions that help businesses, entrepreneurs, and personal brands grow in the digital world.
+          </p>
+
+          <p class="bio-text">
+            My goal is to create impactful AI-powered content that not only captures attention but also builds meaningful connections and delivers measurable value for every project. I believe that creativity and technology together can transform ideas into powerful digital experiences.
+          </p>
         </div>
 
-        <!-- Magnetic floating circular badge -->
-        <a href="mailto:rimshad@example.com" class="talk-badge" id="magnetic-badge">
-          <div class="badge-content">
-            <span>TALK</span>
-            <span>TO ME</span>
+        <!-- Credentials Right Column -->
+        <div class="credentials-column reveal-element reveal-right">
+          <!-- Technical Skills Box -->
+          <div class="info-group">
+            <h3 class="info-heading">TECHNICAL STRENGTHS</h3>
+            <ul class="info-list">
+              <li>AI Content Creation</li>
+              <li>AI Video Creation & Marketing</li>
+              <li>Vibe Coding</li>
+              <li>Social Media Marketing</li>
+              <li>Content Marketing</li>
+              <li>Business Administration</li>
+              <li>Strategic Decision Making</li>
+              <li>Creative Problem Solving & Digital Strategy</li>
+            </ul>
           </div>
-        </a>
+
+          <!-- Tools Box -->
+          <div class="info-group">
+            <h3 class="info-heading">TOOLS & ECOSYSTEM</h3>
+            <div class="tools-grid">
+              <span class="tool-tag">Flow</span>
+              <span class="tool-tag">Gemini</span>
+              <span class="tool-tag">Seedance</span>
+              <span class="tool-tag">Higgsfield</span>
+              <span class="tool-tag">OpenArt</span>
+              <span class="tool-tag">Gamma</span>
+              <span class="tool-tag">Claude AI</span>
+              <span class="tool-tag">VS Code</span>
+              <span class="tool-tag">Codex</span>
+              <span class="tool-tag">Antigravity</span>
+            </div>
+          </div>
+
+          <!-- Certifications Box -->
+          <div class="info-group">
+            <h3 class="info-heading">CERTIFICATIONS</h3>
+            <p class="cert-item">AI Content Creation & Marketing</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
   </main>
 
   <!-- JS Script -->

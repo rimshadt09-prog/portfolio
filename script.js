@@ -83,4 +83,22 @@ document.addEventListener("DOMContentLoaded", () => {
   photoFrame.addEventListener("mouseleave", () => {
     magneticBadge.style.transform = "translate3d(0, 0, 0) scale(1)";
   });
+
+  // --- 4. Intersection Observer for Scroll Reveal ---
+  const scrollElements = document.querySelectorAll(".scroll-reveal");
+
+  const elementObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        elementObserver.unobserve(entry.target); // Reveal once
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  scrollElements.forEach(el => {
+    elementObserver.observe(el);
+  });
 });
