@@ -39,7 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-.node/
-node_modules/
-git_push.ps1
