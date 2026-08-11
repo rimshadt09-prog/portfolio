@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "Sophia Vance",
+    "company": "VANCE Studio",
+    "image": "/assets/testimonials/client1.jpg",
+    "rating": 5,
+    "review": "Maison D'Art transformed our industrial warehouse into an editorial gallery of light, shadow, and texture. Their care for spatial silence is unparalleled."
+  },
+  {
+    "id": "2",
+    "name": "Marcus Thorne",
+    "company": "Thorne Technologies",
+    "image": "/assets/testimonials/client2.jpg",
+    "rating": 5,
+    "review": "Their precise alignment of apertures created a home that feels like living inside a minimalist sculpture. It captures raw, natural beauty."
+  }
+]

@@ -136,6 +136,18 @@ export default function Contact() {
                 rimshadt09@gmail.com
               </a>
             </div>
+
+            <div className="space-y-2">
+              <span className="text-[#c8102e] block text-[10px] font-bold">WHATSAPP CHAT</span>
+              <a
+                href="https://wa.me/919249032955?text=Hi%20Rimshad,%20I%27d%20like%20to%20discuss%20a%20creative%20project%20with%20you!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FFFFFF] hover:text-[#c8102e] transition-colors duration-300"
+              >
+                +91 9249032955 ↗
+              </a>
+            </div>
             
             <div className="space-y-2">
               <span className="text-[#c8102e] block text-[10px] font-bold">SOCIAL CHANNELS</span>

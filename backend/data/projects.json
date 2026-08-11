@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "THE BRUTAL RESIDENCE",
+    "category": "Residential Architecture",
+    "location": "Zurich, Switzerland",
+    "image": "/assets/projects/project1.jpg",
+    "year": "2025",
+    "description": "A monolithic villa carved from raw concrete and structural oak, framing the Swiss alpine panorama through sheer glass facades."
+  },
+  {
+    "id": "2",
+    "title": "LINEN & PLASTER SUITE",
+    "category": "Bespoke Interior Design",
+    "location": "Milano, Italy",
+    "image": "/assets/projects/project2.jpg",
+    "year": "2024",
+    "description": "An editorial bedroom concept emphasizing silence and light. Structured plaster walls pair with custom linen textiles and raw bronze elements."
+  },
+  {
+    "id": "3",
+    "title": "OBSIDIAN KITCHEN",
+    "category": "Spatial Curation",
+    "location": "Kyoto, Japan",
+    "image": "/assets/projects/project3.jpg",
+    "year": "2025",
+    "description": "A minimal culinary workspace showcasing a central block of dark obsidian granite, warm travertine stone floors, and hidden customized wood panels."
+  }
+]

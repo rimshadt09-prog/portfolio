@@ -88,8 +88,9 @@ export default function Navbar() {
           {/* Right Side: Let's Talk CTA */}
           <div className="hidden md:block">
             <a
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, "#contact")}
+              href="https://wa.me/919249032955?text=Hi%20Rimshad,%20I%27d%20like%20to%20discuss%20a%20creative%20project%20with%20you!"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-sans text-[10px] tracking-[0.2em] font-semibold text-[#FFFFFF] hover:text-[#c8102e] border border-white/10 hover:border-[#c8102e]/30 px-5 py-2.5 rounded-full transition-all duration-300 uppercase"
             >
               LET'S TALK ↗
@@ -128,8 +129,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
-            onClick={(e) => handleLinkClick(e, "#contact")}
+            href="https://wa.me/919249032955?text=Hi%20Rimshad,%20I%27d%20like%20to%20discuss%20a%20creative%20project%20with%20you!"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
             style={{ transitionDelay: `${mobileMenuOpen ? navLinks.length * 75 + 100 : 0}ms` }}
             className={`font-sans text-xs tracking-[0.25em] text-[#FFFFFF] hover:text-[#c8102e] border border-white/10 px-6 py-3 rounded-full uppercase transform ${
               mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"

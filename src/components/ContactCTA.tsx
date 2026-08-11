@@ -93,8 +93,9 @@ export default function ContactCTA() {
 
         <div className="flex flex-wrap justify-center gap-6 pt-4">
           <a
-            href="#contact"
-            onClick={(e) => handleScrollTo(e, "#contact")}
+            href="https://wa.me/919249032955?text=Hi%20Rimshad,%20I%27d%20like%20to%20discuss%20a%20creative%20project%20with%20you!"
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta-btn font-sans text-[10px] md:text-xs tracking-[0.2em] font-bold text-[#050505] bg-[#FFFFFF] hover:bg-[#c8102e] hover:text-[#FFFFFF] px-8 py-4 rounded-full transition-all duration-300 uppercase shadow-lg shadow-white/5"
           >
             START A PROJECT ↗

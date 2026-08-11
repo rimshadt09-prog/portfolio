@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Residential Interior Design",
+    "icon": "Home",
+    "description": "Symphonic layout choreography. From raw site framing to structural partitions, we sculpt the foundational lines of luxury residential architecture."
+  },
+  {
+    "id": "2",
+    "title": "Luxury Villa Design",
+    "icon": "Sparkles",
+    "description": "Bespoke architectural masterworks. We develop comprehensive conceptual schematics, framing natural vistas and crafting spatial harmony."
+  },
+  {
+    "id": "3",
+    "title": "Commercial Spaces",
+    "icon": "Briefcase",
+    "description": "Editorial spatial identity. We design retail showrooms, corporate galleries, and premium workspaces that communicate brand refinement."
+  },
+  {
+    "id": "4",
+    "title": "Custom Furniture Design",
+    "icon": "Layers",
+    "description": "Bespoke artisanal commissions. We design limited-run furniture, custom storage configurations, and sculpt tactile wooden and stone details."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "Jean-Louis Dupont",
+    "role": "Principal Architect",
+    "bio": "Focuses on brutalist geometry, monolithic construction, and high-end material sourcing."
+  },
+  {
+    "id": "2",
+    "name": "Elena Rostova",
+    "role": "Director of Spatial Curation",
+    "bio": "Curator of rare, antique furniture and specialist in warm-neutral texturing."
+  }
+]

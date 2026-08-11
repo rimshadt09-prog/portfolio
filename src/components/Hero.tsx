@@ -151,8 +151,9 @@ export default function Hero() {
               VIEW MY WORK ↗
             </a>
             <a
-              href="#contact"
-              onClick={handleScrollToContact}
+              href="https://wa.me/919249032955?text=Hi%20Rimshad,%20I%27d%20like%20to%20discuss%20a%20creative%20project%20with%20you!"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hero-btn font-sans text-[10px] md:text-xs tracking-[0.2em] font-bold text-[#FFFFFF] hover:text-[#c8102e] border border-white/10 hover:border-[#c8102e]/30 px-7 py-4 rounded-full transition-all duration-300 uppercase"
             >
               LET'S WORK TOGETHER ↗
