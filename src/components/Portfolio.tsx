@@ -323,6 +323,18 @@ export default function Portfolio() {
                 </div>
               </div>
 
+              {/* View Raw Files in Drive Link */}
+              <div className="pt-6 border-t border-white/5">
+                <a
+                  href="https://drive.google.com/drive/folders/1MzJpuXtbhYE4mTHMr3rtWmZGnQXiQTnM?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center border border-[#c8102e] hover:bg-[#c8102e] hover:text-[#FFFFFF] transition-all duration-300 py-3 rounded-full font-sans text-[10px] tracking-[0.2em] text-[#c8102e] uppercase block font-bold cursor-pointer"
+                >
+                  VIEW WORK IN DRIVE ↗
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
