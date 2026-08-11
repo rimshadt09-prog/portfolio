@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #080808;
-  --foreground: #F4F1EA;
+  --background: #050505;
+  --foreground: #FFFFFF;
+  --accent-red: #c8102e;
 }
 
 body {
@@ -19,14 +20,14 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222220;
+  background: var(--accent-red);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A880;
+  background: #b00d25;
 }
 
 /* Lenis smooth scrolling helper styles */

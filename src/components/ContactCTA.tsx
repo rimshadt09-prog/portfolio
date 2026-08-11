@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Calendar, Layers } from "lucide-react";
 
 export default function ContactCTA() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,7 +59,7 @@ export default function ContactCTA() {
     }
   }, []);
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLButtonElement>, href: string) => {
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetElement = document.querySelector(href);
     if (targetElement) {
@@ -71,53 +70,35 @@ export default function ContactCTA() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen flex flex-col justify-center items-center text-center px-6 md:px-12 border-b border-[#222220] overflow-hidden"
+      className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 md:px-12 border-b border-white/5 overflow-hidden py-24 bg-[#050505]"
     >
-      {/* Immersive Dark Textured Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-radial-at-c from-[#1e1d1a]/20 via-[#0a0a0a]/90 to-[#080808] pointer-events-none" />
-
-      {/* Abstract structural grid overlay */}
-      <div className="absolute inset-0 grid grid-cols-6 pointer-events-none opacity-5">
-        <div className="border-r border-dashed border-[#F4F1EA] h-full" />
-        <div className="border-r border-dashed border-[#F4F1EA] h-full" />
-        <div className="border-r border-dashed border-[#F4F1EA] h-full" />
-        <div className="border-r border-dashed border-[#F4F1EA] h-full" />
-        <div className="border-r border-dashed border-[#F4F1EA] h-full" />
-        <div className="h-full" />
-      </div>
+      {/* Background ambient red glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-[#c8102e]/3 blur-[100px] pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-5xl mx-auto space-y-12">
-        <span className="font-sans text-xs tracking-[0.35em] text-[#C5A880] uppercase block">
-          Collab Dialogue
+        <span className="font-sans text-xs tracking-[0.35em] text-[#c8102e] font-bold uppercase block">
+          LET'S CREATE SOMETHING
         </span>
 
-        <h2 className="cta-heading font-serif text-5xl md:text-8xl tracking-tight leading-[1.05] text-[#F4F1EA]">
-          Let's Create Your <br />
-          <span className="font-serif italic text-[#C5A880]">Dream Space</span>.
+        <h2 className="cta-heading font-serif text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-[#FFFFFF] uppercase">
+          HAVE AN IDEA? <br />
+          <span className="font-serif italic text-white/90">LET'S TURN IT</span> <br />
+          INTO SOMETHING <br />
+          PEOPLE REMEMBER.
         </h2>
 
-        <p className="cta-paragraph font-sans text-sm md:text-base text-[#8E8A82] tracking-wide max-w-xl mx-auto leading-relaxed">
-          Embark on a spatial journey. Connect with our principal architect to explore structural layouts, tactile placements, and curated spatial logic.
+        <p className="cta-paragraph font-sans text-sm md:text-base text-[#a3a3a3] tracking-wide max-w-xl mx-auto leading-relaxed">
+          Whether you need AI content, cinematic video, social media creative, branding, or a digital experience, let's create something meaningful.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 pt-4">
-          <button
+        <div className="flex flex-wrap justify-center gap-6 pt-4">
+          <a
+            href="#contact"
             onClick={(e) => handleScrollTo(e, "#contact")}
-            data-cursor="open"
-            className="cta-btn w-full sm:w-auto px-8 py-4 bg-[#C5A880] text-[#080808] border border-[#C5A880] hover:bg-transparent hover:text-[#C5A880] transition-all duration-500 font-sans text-xs tracking-[0.3em] uppercase flex items-center justify-center space-x-3 cursor-pointer rounded"
+            className="cta-btn font-sans text-[10px] md:text-xs tracking-[0.2em] font-bold text-[#050505] bg-[#FFFFFF] hover:bg-[#c8102e] hover:text-[#FFFFFF] px-8 py-4 rounded-full transition-all duration-300 uppercase shadow-lg shadow-white/5"
           >
-            <span>Book Consultation</span>
-            <Calendar size={13} />
-          </button>
-          
-          <button
-            onClick={(e) => handleScrollTo(e, "#portfolio")}
-            data-cursor="open"
-            className="cta-btn w-full sm:w-auto px-8 py-4 bg-transparent text-[#F4F1EA] border border-[#222220] hover:border-[#C5A880] hover:text-[#C5A880] transition-all duration-500 font-sans text-xs tracking-[0.3em] uppercase flex items-center justify-center space-x-3 cursor-pointer rounded"
-          >
-            <span>View Portfolio</span>
-            <Layers size={13} />
-          </button>
+            START A PROJECT ↗
+          </a>
         </div>
       </div>
     </section>

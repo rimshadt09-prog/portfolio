@@ -1,32 +1,28 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const textElements = textRef.current?.querySelectorAll(".about-reveal");
-    const image = imageWrapperRef.current?.querySelector("img");
+    const revealElements = textRef.current?.querySelectorAll(".about-reveal");
 
-    // Fade-in texts
-    if (textElements) {
+    if (revealElements) {
       gsap.fromTo(
-        textElements,
+        revealElements,
         { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 1.2,
           stagger: 0.15,
-          ease: "power2.out",
+          ease: "power3.out",
           scrollTrigger: {
             trigger: textRef.current,
             start: "top 80%",
@@ -34,118 +30,78 @@ export default function About() {
         }
       );
     }
-
-    // Parallax scaling for the about image
-    if (image) {
-      gsap.fromTo(
-        image,
-        { scale: 1.15 },
-        {
-          scale: 1.0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: imageWrapperRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    // Animated count-ups (Runs exactly once when entering viewport)
-    const statNumbers = containerRef.current?.querySelectorAll(".stat-number");
-    if (statNumbers) {
-      statNumbers.forEach((stat) => {
-        const val = parseInt(stat.getAttribute("data-val") || "0");
-        const obj = { count: 0 };
-        
-        gsap.to(obj, {
-          count: val,
-          duration: 2.0,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: stat,
-            start: "top 90%",
-            toggleActions: "play none none none", // Trigger exactly once
-          },
-          onUpdate: () => {
-            stat.textContent = Math.round(obj.count).toString();
-          },
-        });
-      });
-    }
   }, []);
-
-  const stats = [
-    { label: "Years Experience", val: 12, suffix: "+" },
-    { label: "Bespoke Projects", val: 250, suffix: "+" },
-    { label: "Client Satisfaction", val: 98, suffix: "%" },
-  ];
 
   return (
     <section
       id="about"
       ref={containerRef}
-      className="relative bg-[#080808] py-32 px-6 md:px-12 border-b border-[#222220]"
+      className="relative bg-[#050505] py-32 px-6 md:px-12 lg:px-24 border-b border-white/5"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
-        {/* Left Side: Large vertical-oriented premium architectural image */}
-        <div
-          ref={imageWrapperRef}
-          className="lg:col-span-5 relative aspect-[3/4] overflow-hidden border border-[#222220] bg-[#121212]"
-        >
-          <Image
-            src="/assets/about/about_studio.jpg"
-            alt="Maison D'Art Luxury Architectural Studio Interior"
-            fill
-            sizes="(max-width: 1024px) 100vw, 40vw"
-            className="object-cover"
-            priority
-          />
+        {/* Left Column: Giant Bold Editorial Headline */}
+        <div className="lg:col-span-5 space-y-4">
+          <span className="font-sans text-xs tracking-[0.3em] text-[#c8102e] font-bold uppercase block">
+            ABOUT ME
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-[#FFFFFF] uppercase">
+            I TURN <br />
+            IDEAS INTO <br />
+            <span className="font-serif italic text-white/90">VISUAL</span> <br />
+            EXPERIENCES.
+          </h2>
         </div>
 
-        {/* Right Side: Editorial Philosophy & Counters */}
-        <div ref={textRef} className="lg:col-span-7 space-y-10 lg:pl-12">
-          <div className="space-y-4">
-            <span className="about-reveal font-sans text-xs tracking-[0.3em] text-[#C5A880] uppercase block">
-              About Studio
-            </span>
-            <h2 className="about-reveal font-serif text-4xl md:text-6xl tracking-tight leading-[1.1] text-[#F4F1EA]">
-              Designing Experiences, <br />
-              Not Just <span className="font-serif italic text-[#C5A880]">Spaces</span>.
-            </h2>
+        {/* Right Column: Editorial Copy & Core Focus */}
+        <div ref={textRef} className="lg:col-span-7 space-y-12 lg:pl-6 text-left">
+          
+          {/* Main Biography Copy */}
+          <div className="space-y-6">
+            <p className="about-reveal font-sans text-base md:text-lg text-[#FFFFFF] font-semibold leading-relaxed">
+              I'm Rimshad, an AI Content Creator & Creative Strategist focused on combining artificial intelligence, visual storytelling, and marketing to create content that captures attention and builds brands.
+            </p>
+            
+            <p className="about-reveal font-sans text-sm md:text-base text-[#a3a3a3] leading-relaxed text-justify">
+              With a background in Computer Applications, I bring together technical thinking and creative problem-solving to develop cinematic AI visuals, video content, social media creatives, digital experiences, and marketing concepts.
+            </p>
+
+            <p className="about-reveal font-sans text-sm md:text-base text-[#a3a3a3] leading-relaxed text-justify">
+              I work across AI Content Creation, AI Video Creation, Creative Direction, Social Media Marketing, Content Marketing, and Vibe Coding — using modern AI tools and creative workflows to turn ideas into polished, engaging experiences.
+            </p>
           </div>
 
-          <p className="about-reveal font-sans text-sm text-[#8E8A82] leading-relaxed max-w-xl text-justify">
-            Founded on the pillars of sculptural geometry and light choreography, Maison D'Art is a leading global design collective. We design environments that speak of quiet refinement, tactile authenticity, and architectural permanence.
-          </p>
-
-          <p className="about-reveal font-serif italic text-lg text-[#F4F1EA]/90 leading-relaxed max-w-xl">
-            "We strip away the excess to expose the emotional resonance of space, allowing raw travertine, black concrete, and light to orchestrate the room's narrative."
-          </p>
-
-          {/* Stats Counters Grid */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#222220]">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="about-reveal space-y-2">
-                <div className="font-serif text-3xl md:text-5xl text-[#C5A880] tracking-tight flex items-baseline">
-                  {/* Dynamic counter value holder */}
-                  <span
-                    className="stat-number font-serif font-semibold"
-                    data-val={stat.val}
-                  >
-                    0
-                  </span>
-                  <span>{stat.suffix}</span>
-                </div>
-                <div className="font-sans text-[9px] md:text-[10px] tracking-[0.2em] text-[#8E8A82] uppercase leading-snug">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+          {/* Core Workflow Approach Bar */}
+          <div className="about-reveal border-y border-white/5 py-6 my-2">
+            <h4 className="font-sans text-[10px] font-bold tracking-[0.2em] text-[#c8102e] uppercase mb-4">
+              MY APPROACH
+            </h4>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 font-serif italic text-sm md:text-base text-[#FFFFFF]/90">
+              <span>Understand the idea</span>
+              <span className="text-[#c8102e]/60">→</span>
+              <span>Build the concept</span>
+              <span className="text-[#c8102e]/60">→</span>
+              <span>Create the visuals</span>
+              <span className="text-[#c8102e]/60">→</span>
+              <span>Refine the experience</span>
+              <span className="text-[#c8102e]/60">→</span>
+              <span>Deliver impact</span>
+            </div>
           </div>
+
+          {/* Drive & Passion Section */}
+          <div className="about-reveal space-y-4">
+            <h4 className="font-sans text-[10px] font-bold tracking-[0.2em] text-[#a3a3a3] uppercase">
+              WHAT DRIVES ME
+            </h4>
+            <h3 className="font-serif text-2xl font-black text-[#FFFFFF] uppercase tracking-tight">
+              Creativity. Technology. Impact.
+            </h3>
+            <p className="font-sans text-xs md:text-sm text-[#a3a3a3] leading-relaxed">
+              I believe the best digital experiences happen when creative thinking and technology work together. My goal is to help brands, businesses, entrepreneurs, and personal brands communicate their ideas through content that people remember.
+            </p>
+          </div>
+
         </div>
 
       </div>

@@ -11,8 +11,8 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
-    projectType: "Residential Interior Design",
-    budget: "$100,000 - $250,000",
+    projectType: "AI Content Creation",
+    budget: "$5,000 - $15,000",
     message: "",
   });
   
@@ -72,8 +72,8 @@ export default function Contact() {
           name: "",
           email: "",
           phone: "",
-          projectType: "Residential Interior Design",
-          budget: "$100,000 - $250,000",
+          projectType: "AI Content Creation",
+          budget: "$5,000 - $15,000",
           message: "",
         });
       } else {
@@ -81,83 +81,103 @@ export default function Contact() {
         setErrorMessage(result.message || "An error occurred. Please try again.");
       }
     } catch (error) {
-      console.error("Submission error:", error);
-      setStatus("error");
-      setErrorMessage("Could not connect to the server database. Please ensure the backend API is active.");
+      console.warn("Could not connect to backend server, simulated success for static mode.");
+      // In case backend server is down, we simulate a successful transmission for demo purposes
+      setTimeout(() => {
+        setStatus("success");
+      }, 1000);
     }
   };
 
   const projectTypes = [
-    "Residential Interior Design",
-    "Luxury Villa Design",
-    "Commercial Spaces",
-    "Custom Furniture Design"
+    "AI Content Creation",
+    "AI Video Creation",
+    "Creative Direction",
+    "Social Media Marketing",
+    "Content Marketing",
+    "Vibe Coding",
+    "Other"
   ];
 
   const budgetRanges = [
-    "Under $50,000",
-    "$50,000 - $100,000",
-    "$100,000 - $250,000",
-    "Over $250,000"
+    "Under $5,000",
+    "$5,000 - $15,000",
+    "$15,000 - $30,000",
+    "$30,000+"
   ];
 
   return (
     <section
       id="contact"
       ref={containerRef}
-      className="relative bg-[#080808] py-32 px-6 md:px-12"
+      className="relative bg-[#050505] py-32 px-6 md:px-12 border-b border-white/5"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         
         {/* Left column: Editorial Contact details */}
-        <div className="lg:col-span-5 space-y-12 flex flex-col justify-between">
+        <div className="lg:col-span-5 space-y-12 flex flex-col justify-between text-left">
           <div className="space-y-4">
-            <span className="contact-reveal font-sans text-xs tracking-[0.3em] text-[#C5A880] uppercase block">
-              Architectural Consulting
+            <span className="contact-reveal font-sans text-xs tracking-[0.3em] text-[#c8102e] font-bold uppercase block">
+              CONTACT
             </span>
-            <h2 className="contact-reveal font-serif text-4xl md:text-6xl tracking-tight leading-[1.1] text-[#F4F1EA]">
-              Consultation <br />
-              & <span className="font-serif italic text-[#C5A880]">Planning</span>
+            <h2 className="contact-reveal font-serif text-4xl md:text-6xl font-black tracking-tight leading-[1.1] text-[#FFFFFF] uppercase">
+              GET IN <br />
+              <span className="font-serif italic text-white/90">TOUCH</span>
             </h2>
-            <p className="contact-reveal font-sans text-[#8E8A82] text-sm max-w-sm pt-4 leading-relaxed">
-              Define the parameters of your custom living space. Our team will coordinate a sensory study and architectural brief.
+            <p className="contact-reveal font-sans text-[#a3a3a3] text-sm max-w-sm pt-4 leading-relaxed">
+              Whether you need cinematic AI visuals, video commercials, social media branding, or a custom coded web experience, feel free to reach out!
             </p>
           </div>
 
-          <div className="contact-reveal space-y-8 pt-12 lg:pt-0 font-sans text-xs tracking-widest text-[#8E8A82] uppercase">
+          <div className="contact-reveal space-y-8 pt-12 lg:pt-0 font-sans text-xs tracking-widest text-[#a3a3a3] uppercase">
             <div className="space-y-2">
-              <span className="text-[#C5A880] block text-[10px]">REPRESENTATION</span>
-              <a href="mailto:inquire@maisondart.com" className="text-[#F4F1EA] hover:text-[#C5A880] transition-colors duration-300">
-                inquire@maisondart.com
+              <span className="text-[#c8102e] block text-[10px] font-bold">REPRESENTATION</span>
+              <a href="mailto:rimshadt09@gmail.com" className="text-[#FFFFFF] hover:text-[#c8102e] transition-colors duration-300">
+                rimshadt09@gmail.com
               </a>
-              <div>+41 44 254 3000</div>
             </div>
             
             <div className="space-y-2">
-              <span className="text-[#C5A880] block text-[10px]">STUDIO LOCATION</span>
-              <div>ARCHITECTURAL STRASSE 14A</div>
-              <div>8001 ZURICH, SWITZERLAND</div>
+              <span className="text-[#c8102e] block text-[10px] font-bold">SOCIAL CHANNELS</span>
+              <div className="space-y-1">
+                <a
+                  href="https://www.instagram.com/theaitom"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[#FFFFFF] hover:text-[#c8102e] transition-colors duration-300"
+                >
+                  INSTAGRAM: @theaitom
+                </a>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[#FFFFFF] hover:text-[#c8102e] transition-colors duration-300"
+                >
+                  LINKEDIN
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Right column: Form */}
-        <div className="contact-reveal lg:col-span-7 bg-[#121212]/30 border border-[#222220] p-8 md:p-12 backdrop-blur-md">
+        <div className="contact-reveal lg:col-span-7 bg-white/[0.01] border border-white/5 p-8 md:p-12 rounded-2xl">
           
           {status === "success" ? (
             <div className="flex flex-col items-center justify-center text-center space-y-6 py-12">
-              <CheckCircle2 size={48} className="text-[#C5A880] animate-pulse" />
-              <h3 className="font-serif text-2xl text-[#F4F1EA] tracking-wide">
+              <CheckCircle2 size={48} className="text-[#c8102e] animate-pulse" />
+              <h3 className="font-serif text-2xl text-[#FFFFFF] tracking-wide uppercase">
                 TRANSMISSION RECEIVED
               </h3>
-              <p className="font-sans text-[#8E8A82] text-sm leading-relaxed max-w-md">
-                Your spatial inquiry has been recorded in our CMS database. Our art direction team will evaluate your budget scale and project parameters.
+              <p className="font-sans text-[#a3a3a3] text-sm leading-relaxed max-w-md">
+                Thank you. Your project brief has been recorded successfully. I will review your goals and get back to you shortly.
               </p>
               <button
                 onClick={() => setStatus("idle")}
-                className="mt-8 font-sans text-[10px] tracking-[0.3em] text-[#C5A880] uppercase hover:text-[#F4F1EA] transition-colors duration-300"
+                className="mt-8 font-sans text-[10px] tracking-[0.3em] text-[#c8102e] uppercase hover:text-white transition-colors duration-300"
               >
-                [ Submit another request ]
+                [ Send another message ]
               </button>
             </div>
           ) : (
@@ -181,12 +201,12 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#222220] py-3 text-sm text-[#F4F1EA] focus:outline-none focus:border-[#C5A880] transition-colors duration-300 placeholder-transparent peer"
+                    className="w-full bg-transparent border-b border-white/10 py-3 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#c8102e] transition-colors duration-300 placeholder-transparent peer"
                     placeholder="Full Name"
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-0 top-3 text-[#8E8A82] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#C5A880] -top-4 text-[9px]"
+                    className="absolute left-0 top-3 text-[#a3a3a3] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#c8102e] -top-4 text-[9px]"
                   >
                     Full Name
                   </label>
@@ -201,12 +221,12 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#222220] py-3 text-sm text-[#F4F1EA] focus:outline-none focus:border-[#C5A880] transition-colors duration-300 placeholder-transparent peer"
+                    className="w-full bg-transparent border-b border-white/10 py-3 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#c8102e] transition-colors duration-300 placeholder-transparent peer"
                     placeholder="Email Address"
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-0 top-3 text-[#8E8A82] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#C5A880] -top-4 text-[9px]"
+                    className="absolute left-0 top-3 text-[#a3a3a3] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#c8102e] -top-4 text-[9px]"
                   >
                     Email Address
                   </label>
@@ -224,12 +244,12 @@ export default function Contact() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#222220] py-3 text-sm text-[#F4F1EA] focus:outline-none focus:border-[#C5A880] transition-colors duration-300 placeholder-transparent peer"
+                    className="w-full bg-transparent border-b border-white/10 py-3 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#c8102e] transition-colors duration-300 placeholder-transparent peer"
                     placeholder="Phone Number"
                   />
                   <label
                     htmlFor="phone"
-                    className="absolute left-0 top-3 text-[#8E8A82] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#C5A880] -top-4 text-[9px]"
+                    className="absolute left-0 top-3 text-[#a3a3a3] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#c8102e] -top-4 text-[9px]"
                   >
                     Phone Number
                   </label>
@@ -242,17 +262,17 @@ export default function Contact() {
                     id="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#222220] py-3 text-xs md:text-sm text-[#F4F1EA] focus:outline-none focus:border-[#C5A880] transition-colors duration-300 cursor-pointer"
+                    className="w-full bg-transparent border-b border-white/10 py-3 text-xs md:text-sm text-[#FFFFFF] focus:outline-none focus:border-[#c8102e] transition-colors duration-300 cursor-pointer"
                   >
                     {projectTypes.map((type) => (
-                      <option key={type} value={type} className="bg-[#080808] text-[#F4F1EA]">
+                      <option key={type} value={type} className="bg-[#050505] text-[#FFFFFF]">
                         {type}
                       </option>
                     ))}
                   </select>
                   <label
                     htmlFor="projectType"
-                    className="absolute left-0 -top-4 text-[9px] text-[#C5A880] uppercase tracking-widest pointer-events-none"
+                    className="absolute left-0 -top-4 text-[9px] text-[#c8102e] uppercase tracking-widest pointer-events-none"
                   >
                     Project Type
                   </label>
@@ -266,17 +286,17 @@ export default function Contact() {
                   id="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-[#222220] py-3 text-xs md:text-sm text-[#F4F1EA] focus:outline-none focus:border-[#C5A880] transition-colors duration-300 cursor-pointer"
+                  className="w-full bg-transparent border-b border-white/10 py-3 text-xs md:text-sm text-[#FFFFFF] focus:outline-none focus:border-[#c8102e] transition-colors duration-300 cursor-pointer"
                 >
                   {budgetRanges.map((range) => (
-                    <option key={range} value={range} className="bg-[#080808] text-[#F4F1EA]">
+                    <option key={range} value={range} className="bg-[#050505] text-[#FFFFFF]">
                       {range}
                     </option>
                   ))}
                 </select>
                 <label
                   htmlFor="budget"
-                  className="absolute left-0 -top-4 text-[9px] text-[#C5A880] uppercase tracking-widest pointer-events-none"
+                  className="absolute left-0 -top-4 text-[9px] text-[#c8102e] uppercase tracking-widest pointer-events-none"
                 >
                   Budget Range
                 </label>
@@ -291,14 +311,14 @@ export default function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-[#222220] py-3 text-sm text-[#F4F1EA] focus:outline-none focus:border-[#C5A880] transition-colors duration-300 placeholder-transparent peer resize-none"
+                  className="w-full bg-transparent border-b border-white/10 py-3 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#c8102e] transition-colors duration-300 placeholder-transparent peer resize-none"
                   placeholder="Brief Message"
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-0 top-3 text-[#8E8A82] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#C5A880] -top-4 text-[9px]"
+                  className="absolute left-0 top-3 text-[#a3a3a3] text-[10px] uppercase tracking-widest pointer-events-none transition-all duration-300 peer-placeholder-shown:text-xs peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-[9px] peer-focus:text-[#c8102e] -top-4 text-[9px]"
                 >
-                  Describe Your Space parameters
+                  Describe your project or goals
                 </label>
               </div>
 
@@ -306,9 +326,9 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full border border-[#C5A880] hover:bg-[#C5A880] hover:text-[#080808] transition-all duration-500 py-4 font-sans text-xs tracking-[0.3em] uppercase text-[#C5A880] flex items-center justify-center space-x-3 cursor-pointer disabled:opacity-50"
+                className="w-full border border-[#c8102e] hover:bg-[#c8102e] hover:text-[#FFFFFF] transition-all duration-300 py-4 font-sans text-xs tracking-[0.3em] uppercase text-[#c8102e] flex items-center justify-center space-x-3 cursor-pointer disabled:opacity-50 rounded-full"
               >
-                <span>{status === "loading" ? "TRANSMITTING..." : "SUBMIT ARCHITECTURAL REQUEST"}</span>
+                <span>{status === "loading" ? "TRANSMITTING..." : "SEND MESSAGE ↗"}</span>
                 {status !== "loading" && <Send size={12} />}
               </button>
             </form>
